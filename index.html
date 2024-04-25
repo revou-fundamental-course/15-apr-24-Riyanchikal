@@ -3,99 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhu Converter</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
-    <title>Temperatur Converter</title>
 </head>
-
 <body>
-    <main>
-        <header class="main-title">
-            <h1>Temperatur Converter</h1>
-        </header> 
-
-        
-        <section class="main-section">
-            <!-- section introduction -->
-            <section>
-                <p>Masukan Suhu Derajat Celcius (&#8451;) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Fahrenheitt(&deg;F)</p>
-            </section>
-            
-
-        <div id="c-to-f">
-            <section class="section-celcius">
-                <header>
-                    <label for="celscius">Celcuis (&deg;C)</label>
-                </header>
-    
-                <article>
-                    <textarea rows="1" id="c-to-f-input" required></textarea>
-                    <div class="containerr-button">
-                        <button id="button-convert" onclick="convert()" type="button">Convert</button>
-                        <button id="button-reset">Reset</button>
-                        <button id="button-reverse" onclick="reverse()">Reverse</button>
-                    </div>
-                </article>
-            </section>
-
-            <section class="section-fahrenhait">
-                <header>
-                    <label for="fahrenheit">Fahrenheit (&#8457;)</label>
-                </header>
-    
-                <article>
-                    <textarea id="fahrenheit" rows="1" readonly></textarea>
-                </article>
-            </section>
+    <div class="container">
+        <h2>Suhu Converter</h2>
+        <div class="input-group">
+            <input type="number" id="inputTemperature">
+            <select id="inputUnit">
+                <option value="celcius">Celcius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
         </div>
-
-        <form id="f-to-c">
-            <section class="section-fahrenhait">
-                <header>
-                    <label>Fahrenheit (&#8457;)</label>
-                </header>
-    
-                <article>
-                    <textarea rows="1" readonly></textarea>
-                </article>
-            </section>
-
-            <section class="section-celcius">
-                <header>
-                    <label for="celscius">Celcuis (&deg;C)</label>
-                </header>
-    
-                <article>
-                    <textarea rows="1"></textarea>
-                    <div class="containerr-button">
-                        <button id="button-convert">Convert</button>
-                        <button id="button-reset">Reset</button>
-                        <button id="button-reverse" onclick="reverse()">Reverse</button>
-                    </div>
-                </article>
-            </section>
-        </form>
-
-
-            <section class="section-result">
-                <header>
-                    <label>Cara Kalkulasi</label>
-                </header>
-                <article>
-                    <textarea rows="1" readonly></textarea>
-                </article>
-            </section>
-
-            <section class="section-explaination">
-                <header>
-                    <h1>Cara Konversi dari (&deg;C) ke (&deg;F)</h1>
-                </header>
-                <hr>
-                <article>
-                    <h1 class="formula-s">S<sub>(&deg;F)</sub></h1>
-                </article>
-            </section>
-        </section>
-    </main>
+        <div class="buttons">
+            <button onclick="convert()">Convert</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="reverse()">Reverse</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="calculation" id="calculation"></div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
